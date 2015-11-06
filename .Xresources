@@ -64,3 +64,11 @@
 ! ------------------------------------------------------------------------------
 ! --- end of terminal colors section -------------------------------------------
 ! ------------------------------------------------------------------------------
+
+! ---- copy/paste functionality for urxvt
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt.iso14755: False
+
+URxvt.perl-ext-common: default,clipboard
