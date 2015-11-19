@@ -71,4 +71,6 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 URxvt.iso14755: False
 
-URxvt.perl-ext-common: default,clipboard
+URxvt.perl-ext-common: default,clipboard,tabbed
+
+Rxvt.font: 9x15

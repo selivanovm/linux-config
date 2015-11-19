@@ -4,16 +4,20 @@
 
 setxkbmap -model pc104 -layout us,ru -option grp:shifts_toggle
 
-pkill -f redshift
 redshift &
-
-pkill -f stalonetray
 stalonetray &
-
-pkill -f xscreensaver
 xscreensaver -no-splash &
-
-pkill -f batterymon
 batterymon &
+nm-applet    2>&1 /dev/null &
+syndaemon -k -i 0.4 &
+
+export `gnome-keyring-daemon -d`
 
 exec xmonad
+
+pkill redshift
+pkill stalonetray
+pkill -f xscreensaver
+pkill -f batterymon
+pkill nm-applet
+pkill syndaemon

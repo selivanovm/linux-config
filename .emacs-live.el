@@ -26,6 +26,9 @@
   (setq live-dev-pack-list (mapcar (lambda (p) (concat dev-dir p)) pack-names) ))
 
 ;; my stuff
-(set-default-font " -unknown-Ubuntu Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+;; (set-default-font " -unknown-Ubuntu Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 
-(projectile-global-mode)
+;; (projectile-global-mode)
+
+(setq org-todo-keywords
+   '((sequence "TODO" "|" "DONE" "DELEGATED")))
