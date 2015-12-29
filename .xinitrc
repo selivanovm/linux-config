@@ -9,7 +9,7 @@ stalonetray &
 xscreensaver -no-splash &
 batterymon &
 nm-applet    2>&1 /dev/null &
-syndaemon -k -i 0.4 &
+syndaemon -k -i 1 &
 
 export `gnome-keyring-daemon -d`
 

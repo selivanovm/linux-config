@@ -31,4 +31,4 @@
 ;; (projectile-global-mode)
 
 (setq org-todo-keywords
-   '((sequence "TODO" "|" "DONE" "DELEGATED")))
+   '((sequence "TODO" "IN-PROGRESS" "|" "DONE" "DELEGATED" "CANCELED")))

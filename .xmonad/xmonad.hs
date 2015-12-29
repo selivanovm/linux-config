@@ -27,7 +27,15 @@ main = do
     , modMask     = mod4Mask
     , borderWidth = 1
     , startupHook = setWMName "LG3D"
-    } `additionalKeys` [ ((mod4Mask, xK_s)                     , spawnSelected defaultGSConfig ["emacs&", "chromium&"])
+    } `additionalKeys` [ ((mod4Mask, xK_s)                     , spawnSelected defaultGSConfig ["emacs&", "chromium&", "lucidor&"])
                        , ((mod4Mask, xK_i)                     , spawn "/home/ubear/bin/idea")
-                       , ((0, xF86XK_MonBrightnessDown)        , spawn "xbacklight -dec 20")
-                       , ((0, xF86XK_MonBrightnessUp)          , spawn "xbacklight -inc 20")]
+                       , ((mod4Mask, xK_n)                     , spawn "touch ~/.pomodoro_session")
+                       , ((0, xF86XK_MonBrightnessDown)        , spawn "xbacklight -dec 10")
+                       , ((0, xF86XK_MonBrightnessUp)          , spawn "xbacklight -inc 10")1
+                       , ((0, xF86XK_AudioLowerVolume)         , spawn $ changeVolumeCmd "-")
+                       , ((0, xF86XK_AudioRaiseVolume)         , spawn $ changeVolumeCmd "+")
+                       , ((0, xF86XK_AudioMute)                , spawn "sh -c \"pactl set-sink-mute 0 toggle\"")
+                       ]
+
+changeVolumeCmd :: String -> String
+changeVolumeCmd sign = "sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 " ++ sign ++ "5%\""
