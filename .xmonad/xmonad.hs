@@ -1,5 +1,6 @@
 import XMonad
 import XMonad.Actions.GridSelect
+import XMonad.Actions.GroupNavigation
 
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
@@ -31,10 +32,13 @@ main = do
                        , ((mod4Mask, xK_i)                     , spawn "/home/ubear/bin/idea")
                        , ((mod4Mask, xK_n)                     , spawn "touch ~/.pomodoro_session")
                        , ((0, xF86XK_MonBrightnessDown)        , spawn "xbacklight -dec 10")
-                       , ((0, xF86XK_MonBrightnessUp)          , spawn "xbacklight -inc 10")1
+                       , ((0, xF86XK_MonBrightnessUp)          , spawn "xbacklight -inc 10")
                        , ((0, xF86XK_AudioLowerVolume)         , spawn $ changeVolumeCmd "-")
                        , ((0, xF86XK_AudioRaiseVolume)         , spawn $ changeVolumeCmd "+")
                        , ((0, xF86XK_AudioMute)                , spawn "sh -c \"pactl set-sink-mute 0 toggle\"")
+                       , ((mod1Mask, xK_Tab)                   , nextMatch Backward (return True))
+                       , ((mod1Mask .|. shiftMask, xK_Tab)     , nextMatch Forward (return True))
+
                        ]
 
 changeVolumeCmd :: String -> String
