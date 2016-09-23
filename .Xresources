@@ -74,3 +74,5 @@ URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard,tabbed
 
 Rxvt.font: 9x15
+
+URxvt*saveLines: 4096

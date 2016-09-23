@@ -31,7 +31,7 @@
 ;; (projectile-global-mode)
 
 (setq org-todo-keywords
-   '((sequence "TODO" "IN-PROGRESS" "|" "DONE" "DELEGATED" "CANCELED")))
+   '((sequence "TODO" "IN-PROGRESS" "IN-REVIEW" "|" "DONE" "DELEGATED" "CANCELED")))
 
 (add-hook 'php-mode-hook
           '(lambda ()
